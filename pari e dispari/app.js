@@ -2,6 +2,8 @@
 const playButton = document.getElementById('play-button')
 const oddOrEvenElement = document.getElementById('odd-even')
 const userPickElement = document.getElementById('number')
+const imgWin = document.getElementById('win')
+const imgLoss = document.getElementById('loss')
 let pcPick
 
 playButton.addEventListener('click', function (){
@@ -31,12 +33,18 @@ playButton.addEventListener('click', function (){
   if(oddOrEven === "even" && isEven(somma)){
     // se il giocatore ha scelto pari e la somma e' pari
     console.log(" il giocatore ha scelto pari, il risultato é pari e quindi ha vinto")
+    imgLoss.classList.remove('active')
+    imgWin.classList.add('active')
   }else if(oddOrEven === "odd" && !isEven(somma)){
     // se il giocatore ha scelto dispari e la somma e' dispari
     console.log(" il giocatore ha scelto dispari, il risultato é dispari e quindi ha vinto")
+    imgLoss.classList.remove('active')
+    imgWin.classList.add('active')
   }else{
     // se il giocatore perde
     console.log(" il computer vince")
+    imgWin.classList.remove('active')
+    imgLoss.classList.add('active')
   }
 })
 
