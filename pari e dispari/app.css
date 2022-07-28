@@ -1,7 +1,9 @@
 img{
-  width: 100%;
+  width: 600px;
   aspect-ratio: 16/9;
   display: none;
+  margin: 0 auto;
+  
 }
 img.active{
   display: block;
@@ -9,7 +11,7 @@ img.active{
 
 .container{
   margin: 0 auto;
-  width: 300px;
+  width: 900px;
   margin-top: 100px;
   text-align: center;
 }

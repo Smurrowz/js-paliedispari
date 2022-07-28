@@ -9,7 +9,7 @@ let pcPick
 
 playButton.addEventListener('click', function (){
 
-
+  console.clear()
   // vado a recuperare i valori delle scelte del player
   const userPick = parseInt(userPickElement.value)
   const oddOrEven = oddOrEvenElement.value
@@ -31,24 +31,24 @@ playButton.addEventListener('click', function (){
 
 
   // stampo il risultato in base alle scelte del player e al numero generato
-  if(oddOrEven === "even" && isEven(somma)){
+  if(oddOrEven === "pari" && isEven(somma)){
     // se il giocatore ha scelto pari e la somma e' pari
     console.log(" il giocatore ha scelto pari, il risultato é pari e quindi ha vinto")
     imgLoss.classList.remove('active')
     imgWin.classList.add('active')
-    result.innerHTML = " HAI VINTO "
-  }else if(oddOrEven === "odd" && !isEven(somma)){
+    result.innerHTML = `hai vinto perche': ${userPick} + ${pcPick} = ${somma} e hai scelto ${oddOrEven}`
+  }else if(oddOrEven === "dispari" && !isEven(somma)){
     // se il giocatore ha scelto dispari e la somma e' dispari
     console.log(" il giocatore ha scelto dispari, il risultato é dispari e quindi ha vinto")
     imgLoss.classList.remove('active')
     imgWin.classList.add('active')
-    result.innerHTML = " HAI VINTO " 
+    result.innerHTML = `hai vinto perche': ${userPick} + ${pcPick} = ${somma} e hai scelto ${oddOrEven}`
   }else{
     // se il giocatore perde
     console.log(" il computer vince")
     imgWin.classList.remove('active')
     imgLoss.classList.add('active')
-    result.innerHTML = " HAI PERSO " 
+    result.innerHTML = `hai perso perche': ${userPick} + ${pcPick} = ${somma} e hai scelto ${oddOrEven}`
   }
 })
 
